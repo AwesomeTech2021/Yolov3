@@ -158,7 +158,7 @@ while True:
         
         
         obj_counter = output[:,-1]
-        obj_counter = Counter(obj_counter.numpy().astype(int).tolist())
+        obj_counter = Counter(obj_counter.cpu().numpy().astype(int).tolist())
 
 
         im_dim = im_dim.repeat(output.size(0), 1)
