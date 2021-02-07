@@ -183,10 +183,11 @@ while True:
         center_y, center_x, z = frame.shape
         center_x = center_x / 2
         center_y = center_y / 2
-        
-        print(frame.shape)
-	#print(center_y.type)
+       
         list(map(lambda x: write(x, frame), output))
+        cv2.putText(frame, f"counted object: {len(output)}", (0,50),
+        				cv2.FONT_HERSHEY_SIMPLEX,1,(255,255,255),3)		#검출된 객체 수 표시  
+        
 	
         #img, x_point, y_point = map(lambda x: write(x, frame))
         #out.write(frame)
